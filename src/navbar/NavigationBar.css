@@ -1,0 +1,7 @@
+.user-photo{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: rgb(137, 143, 143);
+    margin: auto;
+}
