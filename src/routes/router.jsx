@@ -1,34 +1,38 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import App from '../App';
 import Login from '../components/login/Login';
 import Register from '../components/register/Register';
 import PrivetRoute from './PrivetRoute';
-import ProtectedDemo from '../components/protectedRoutes/ProtectedDemo';
-import Pricing from '../components/protectedRoutes/Pricing';
 import MainLayout from '../layouts/MainLayout';
+import ErrorPage from '../components/shared/errorPage/ErrorPage';
+import ChefDetailsLayout from '../components/protectedRoutes/ChefDetailsLayout';
+import LoginLayout from '../layouts/LoginLayout';
+import RegisterLayout from '../layouts/RegisterLayout';
+
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
+        loader:({params})=>fetch('../../public/chefData.json'),
+        errorElement:<ErrorPage></ErrorPage>
+        
     },
     {
-        path: "/login",
-        element: <Login></Login>,
+        path: "login",
+        element: <LoginLayout></LoginLayout>,
+        
     },
     {
-        path: "/register",
-        element: <Register></Register>,
+        path:"/register",
+        element:<RegisterLayout></RegisterLayout>
     },
     {
-        path: "/protected",
-        element: <PrivetRoute><ProtectedDemo></ProtectedDemo></PrivetRoute>
+        path: "/chef-details/:id",
+        element: <PrivetRoute><ChefDetailsLayout></ChefDetailsLayout></PrivetRoute>
+
     },
-    {
-        path: "/price",
-        element: <PrivetRoute><Pricing></Pricing></PrivetRoute>
-    },
+    
 ]);
 
 export default router;

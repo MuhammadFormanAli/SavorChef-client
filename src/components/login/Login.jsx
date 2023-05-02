@@ -1,6 +1,6 @@
 
 // import React, { useState } from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import './Login.css'
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -9,7 +9,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const Login = () => {
 
 
-
+    const[error,setError] = useState("")
 
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate()
@@ -27,12 +27,12 @@ const Login = () => {
 
       signIn(email, password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
+                // const loggedUser = result.user;
+                // console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
 
     }
@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div>
-          <Container className=' border border-1 mt-5 col col-12 col-md-6  mx-auto rounded' >
+          <Container className=' border border-1 my-5 col col-12 col-md-6  mx-auto rounded' >
             <h3 className='text-center text-info py-3'>Please Login</h3>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -66,6 +66,10 @@ const Login = () => {
 
                 <Form.Text className="text-secondary">
                     Don't Have an Account? <Link to="/register">Register</Link>
+                </Form.Text>
+
+                <Form.Text className='text-danger d-block text-center'>
+                    <small>{error}</small>
                 </Form.Text>
                 
             </Form>

@@ -35,7 +35,7 @@ const Register = () => {
     }
     return (
         <div>
-            <Container className=' border border-1 mt-5 col col-12 col-md-6  mx-auto rounded'>
+            <Container className=' border border-1 my-5 col col-12 col-md-6  mx-auto rounded'>
             <h3 className='text-info text-center pt-5'>Please Register</h3>
 
             <Form onSubmit={handleRegister}>
@@ -69,8 +69,7 @@ const Register = () => {
                     Register
                 </Button>
                 
-                <br />
-                <Form.Text className="text-secondary">
+                <Form.Text className="text-secondary ms-5">
                     Already Have an Account? <Link to="/login">Login</Link>
                 </Form.Text>
             </Form>

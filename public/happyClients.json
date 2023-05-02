@@ -1,0 +1,25 @@
+[
+      { 
+        "id":1,
+        "name": "John Smith",
+        "clientImg":"",
+        "occupation": "Software Developer",
+        "testimonial": "I am so happy with the service provided by this company. They were able to help me solve a difficult problem and get my project back on track. I would definitely recommend them to anyone looking for high-quality and reliable service."
+      },
+      {
+        "id":2,
+        "name": "Jane Doe",
+        "clientImg":"",
+        "occupation": "Marketing Manager",
+        "testimonial": "I have been working with this company for several years and have always been impressed with their professionalism and dedication to their clients. They go above and beyond to ensure that their clients are happy and satisfied with their work."
+      },
+      {
+        "id":3,
+        "name": "Bob Johnson",
+        "clientImg":"",
+        "occupation": "Small Business Owner",
+        "testimonial": "I was hesitant to work with a new company at first, but I am so glad that I chose this one. They were able to help me grow my business and reach new customers. I can't thank them enough for all of their hard work and dedication."
+      }
+    ]
+
+  

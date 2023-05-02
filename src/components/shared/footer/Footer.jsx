@@ -1,12 +1,12 @@
 import React from 'react';
 import './Footer.css'
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row} from 'react-bootstrap';
 
 function Footer() {
   return (
     <footer className="bg-dark py-3">
-      <Container>
+      <div>
         
         <Row >    
             <h1 className='text-light text-center'>SavorChef</h1>
@@ -27,7 +27,7 @@ function Footer() {
 
             
 
-      </Container>
+      </div>
     </footer>
   );
 }

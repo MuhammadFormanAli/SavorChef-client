@@ -1,53 +1,91 @@
 #root {
-    height: 100%;
-  }
-  html,
-  body {
-    position: relative;
-    height: 100%;
-  }
-  
-  body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .swiper {
-    width: 100%;
-    height: 500px;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .swiper {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 400px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
-  .banner-container{
-    width: 100%;
-    height: 100%;
-    background-color: #290808;
-  }
-  
+.banner-container {
+  width: 100%;
+  height: 100%;
+  background-color: #290808;
+}
+
+.banner-swiper-1 {
+  background: url(../../assets/images/banner1.jpg);
+
+}
+
+.banner-swiper-2 {
+
+  background: url(../../assets/images/banner2.jpg);
+}
+
+.banner-swiper-3 {
+  background: url(../../assets/images/banner3.jpg);
+
+}
+
+.banner-swiper-1,
+.banner-swiper-2,
+.banner-swiper-3 {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.banner-swiper-1 h1,
+.banner-swiper-2 h1,
+.banner-swiper-3 h1 {
+  background-color: #00000038;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 15px;
+
+}

@@ -1,19 +1,17 @@
 import React from 'react';
-import NavigationBar from '../components/shared/navbar/NavigationBar';
-import { Outlet } from 'react-router-dom';
-import Footer from '../components/shared/footer/Footer';
 import { Container } from 'react-bootstrap';
-import Login from '../components/login/Login';
+import NavigationBar from '../components/shared/navbar/NavigationBar';
+import Footer from '../components/shared/footer/Footer';
+import Register from '../components/register/Register';
 
-const LoginLayout = () => {
+const RegisterLayout = () => {
     return (
         <>
             <NavigationBar></NavigationBar>
-            <Login></Login>
-            <Outlet></Outlet>
+            <Register></Register>
             <Footer></Footer>
         </>
     );
 };
 
-export default LoginLayout;
+export default RegisterLayout;
