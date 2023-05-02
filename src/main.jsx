@@ -8,6 +8,9 @@ import Login from "./components/login/Login.jsx";
 import Register from "./components/register/Register.jsx";
 import AuthProvider from "./contexts/AuthProvider";
 import App from "./App";
+import ProtectedDemo from "./components/protectedRoutes/ProtectedDemo";
+import PrivetRoute from "./components/privetRoute/PrivetRoute";
+import Pricing from "./components/protectedRoutes/Pricing";
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,14 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <Register></Register>,
+    },
+    {
+        path: "/protected",
+        element: <PrivetRoute><ProtectedDemo></ProtectedDemo></PrivetRoute>
+    },
+    {
+        path: "/price",
+        element: <PrivetRoute><Pricing></Pricing></PrivetRoute>
     },
 ]);
 

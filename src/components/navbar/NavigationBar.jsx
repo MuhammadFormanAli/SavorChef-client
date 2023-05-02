@@ -18,12 +18,13 @@ const NavigationBar = () => {
         
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">SavorChef</Navbar.Brand>
+        <Navbar.Brand href="/">SavorChef</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
             <Nav.Link><Link to="/">Home</Link></Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link><Link to="/protected">Protected</Link></Nav.Link>
+            <Nav.Link><Link to="/price">Price</Link></Nav.Link>
           </Nav>
         {
             user?
