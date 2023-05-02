@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import  './NavigationBar.css';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthProvider';
+import { AuthContext } from '../../../contexts/AuthProvider';
+// import { AuthContext } from '../../contexts/AuthProvider';
 
 const NavigationBar = () => {
 
