@@ -1,14 +1,17 @@
 
 import './App.css'
-import Footer from './footer/Footer';
-import NavigationBar from './navbar/NavigationBar'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './components/footer/Footer';
+import NavigationBar from './components/navbar/NavigationBar'
+import Register from './components/register/Register';
+import Login from './components/login/Login';
 
 function App() {
 
   return (
     <>
     <NavigationBar></NavigationBar>
+    <Register></Register>
+    <Login></Login>
     <Footer></Footer>
 
     </>
