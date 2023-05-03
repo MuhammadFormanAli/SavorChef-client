@@ -7,7 +7,7 @@ import ActiveLink from "../../ActiveLink/ActiveLink";
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
    
-    console.log(user)
+    // console.log(user)
 
 
     return (

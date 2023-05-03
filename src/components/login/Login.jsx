@@ -11,7 +11,7 @@ const Login = () => {
 
     const[error,setError] = useState("")
 
-    const { signIn,googleSignIn } = useContext(AuthContext);
+    const { signIn,googleSignIn,gitHubSignIn } = useContext(AuthContext);
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -52,6 +52,19 @@ const Login = () => {
         })
     }
 
+    const handleGitHubSignIn=()=>{
+        gitHubSignIn()
+        .then(result =>{
+            const user = result.user
+            console.log(user)
+            navigate(from, { replace: true })
+        })
+        .catch(err=>{
+            console.log(err.message)
+            setError(err.message)
+        })
+    }
+
 
     return (
         <div>
@@ -76,7 +89,7 @@ const Login = () => {
                 <div className='w-100 d-flex flex-column py-3 '>
                     <Button onClick={handleGoogleSignIn} className='mb-3' variant="outline-primary">Login with Google</Button>
                     
-                    <Button variant="outline-secondary">Login with GitHub</Button>
+                    <Button onClick={handleGitHubSignIn} variant="outline-secondary">Login with GitHub</Button>
                 </div>
 
                 <Form.Text className="text-secondary">
