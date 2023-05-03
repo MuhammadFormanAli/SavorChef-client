@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './Register.css'
 import { AuthContext } from '../../contexts/AuthProvider';
@@ -9,6 +9,12 @@ const Register = () => {
     const{createUser}=useContext(AuthContext)
 
     const [accepted, setAccepted] = useState(false);
+    const[error,setError] = useState("")
+
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleRegister = event => {
         event.preventDefault();
@@ -18,15 +24,22 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        if(password.length <6){
+            setError("Password should be at least 6 character")
+            return
+          }
+
         console.log(name, photo, email, password)
 
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
+                setError(error.message)
             })
     }
 
@@ -64,6 +77,11 @@ const Register = () => {
                         name="accept"
                         label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>} />
                 </Form.Group>
+
+                <Form.Text className='text-danger d-block text-left'>
+                    <small>{error}</small>
+                </Form.Text>
+                
 
                 <Button variant="primary" disabled={!accepted} type="submit">
                     Register

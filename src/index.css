@@ -81,3 +81,8 @@ background:url(../public/errorBackground.jpg);
 background-position: center;
 background-size: cover;
 }
+
+.spinner1{
+  width: 300px;
+  margin: auto;
+}

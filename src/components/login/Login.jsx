@@ -20,10 +20,15 @@ const Login = () => {
     
     const handleLogin = (event) => {
       event.preventDefault();
+      
 
       const form = event.target 
       const email = form.email.value 
       const password = form.password.value 
+      if(password.length <6){
+        setError("Password should be at least 6 character")
+        return
+      }
 
       console.log(email, password)
 
@@ -40,6 +45,7 @@ const Login = () => {
     }
 
     const handleGoogleSignIn=()=>{
+        setError('')
         googleSignIn()
         .then(result =>{
             // const user = result.user
@@ -53,6 +59,7 @@ const Login = () => {
     }
 
     const handleGitHubSignIn=()=>{
+        setError('')
         gitHubSignIn()
         .then(result =>{
             const user = result.user
@@ -96,24 +103,13 @@ const Login = () => {
                     Don't Have an Account? <Link to="/register">Register</Link>
                 </Form.Text>
 
+                
+            </Form>
                 <Form.Text className='text-danger d-block text-center'>
                     <small>{error}</small>
                 </Form.Text>
-                
-            </Form>
         </Container>
-
-
-
-
-
-
-
-
-
-
-
-          
+     
             
         </div>
     );
