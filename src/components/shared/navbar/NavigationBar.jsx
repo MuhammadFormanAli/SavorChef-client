@@ -6,6 +6,9 @@ import ActiveLink from "../../ActiveLink/ActiveLink";
 
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthContext);
+   
+    console.log(user)
+
 
     return (
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
@@ -37,8 +40,8 @@ const NavigationBar = () => {
                     <div className="text-center">
                         {user ? (
                             <Nav>
-                                <Image style={{width:"40px"}} roundedCircle className="user-photo"
-                                    src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80"
+                                <Image data-toggle="tooltip" data-placement="top" title={user?.displayName} style={{width:"40px"}} roundedCircle className="user-photo"
+                                    src={user?.photoURL}
                                     alt=""></Image>
                                 
                                 <Nav.Link eventKey={2} href="#memes">
@@ -59,6 +62,9 @@ const NavigationBar = () => {
                         )}
                     </div>
                 </Navbar.Collapse>
+                
+
+                
             </Container>
         </Navbar>
     );

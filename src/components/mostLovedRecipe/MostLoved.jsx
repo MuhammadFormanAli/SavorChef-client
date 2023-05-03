@@ -50,15 +50,15 @@ const MostLoved = () => {
         className="mySwiper"
       >
 
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="../../../public/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
       </Swiper>
     </Container>
   );

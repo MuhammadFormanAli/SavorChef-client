@@ -1,0 +1,5 @@
+buttons[1] = (
+  <button key="Button 2" onClick={() => console.log('Button 2')} disabled>
+    Button 2
+  </button>
+);

@@ -4,10 +4,11 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 const HappyClients = () => {
     const[clients,setClients]=useState([])
     useEffect(()=>{
-        fetch('../../../public/happyClients.json')
+        fetch('/happyClients.json')
         .then(res=>res.json())
         .then(result=>setClients(result))
     },[])
+    console.log(clients)
 
     return (
         <Container className='py-5'>

@@ -11,11 +11,13 @@ const Login = () => {
 
     const[error,setError] = useState("")
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn,googleSignIn } = useContext(AuthContext);
+
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location)
+
     const from = location.state?.from?.pathname || '/'
+    
     const handleLogin = (event) => {
       event.preventDefault();
 
@@ -27,14 +29,27 @@ const Login = () => {
 
       signIn(email, password)
             .then(result => {
-                // const loggedUser = result.user;
-                // console.log(loggedUser);
+                const loggedUser = result.user;
+                console.log(loggedUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
             })
 
+    }
+
+    const handleGoogleSignIn=()=>{
+        googleSignIn()
+        .then(result =>{
+            // const user = result.user
+            // console.log(user)
+            navigate(from, { replace: true })
+        })
+        .catch(err=>{
+            console.log(err.message)
+            setError(err.message)
+        })
     }
 
 
@@ -59,7 +74,7 @@ const Login = () => {
                 <br />
                     <h1 className='text-center'>Or</h1>
                 <div className='w-100 d-flex flex-column py-3 '>
-                    <Button className='mb-3' variant="outline-primary">Login with Google</Button>
+                    <Button onClick={handleGoogleSignIn} className='mb-3' variant="outline-primary">Login with Google</Button>
                     
                     <Button variant="outline-secondary">Login with GitHub</Button>
                 </div>

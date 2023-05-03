@@ -15,11 +15,12 @@ const ChefCard = ({chefs}) => {
       {chefs.map((idx) => (
         <Col key={idx.id}>
           <Card>
-            <Card.Img variant="top" src={idx.imgSrc} />
+            {/* <Card.Img variant="top" src={idx.imgSrc} /> */}
+            <Card.Img variant="top" src="/chef4.jpg" />
             <Card.Body>
               <Card.Title>{idx.chefName}</Card.Title>
               <Card.Text>{idx.experience} of Experience</Card.Text>
-              <Card.Text className='d-flex justify-content-between'><span>Likes:{idx.likes}</span><span>Total recipes:{idx.recipes}</span></Card.Text>
+              <Card.Text className='d-flex justify-content-between'><span>Likes:{idx.likes}</span><span>Total recipes:{idx.totalRecipes}</span></Card.Text>
               
             </Card.Body>
             <Link to={`chef-details/${idx.chefId}`}><Button className='w-100'>View Recipes</Button></Link>
