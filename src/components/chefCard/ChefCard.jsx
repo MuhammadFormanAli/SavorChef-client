@@ -22,7 +22,7 @@ const ChefCard = ({chefs}) => {
               <Card.Text className='d-flex justify-content-between'><span>Likes:{idx.likes}</span><span>Total recipes:{idx.recipes}</span></Card.Text>
               
             </Card.Body>
-            <Link to={`chef-details/${idx.id}`}><Button className='w-100'>View Recipes</Button></Link>
+            <Link to={`chef-details/${idx.chefId}`}><Button className='w-100'>View Recipes</Button></Link>
           </Card>
         </Col>
       ))}

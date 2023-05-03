@@ -13,12 +13,6 @@ function App() {
 
   return (
     <>
-    <NavigationBar></NavigationBar>
-    <Register></Register>
-    <Login></Login>
-    <Footer></Footer>
-
-    {/* <Banner></Banner> */}
 
     </>
 

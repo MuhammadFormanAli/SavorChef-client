@@ -14,6 +14,7 @@ const AuthProvider = ({children}) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [chefs, setChefs]= useState([])
     
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -24,7 +25,7 @@ const AuthProvider = ({children}) => {
     }
     
     const logOut = () => {
-        console.log('aaaa')
+        // console.log('aaaa')
         return signOut(auth);
     }
 
@@ -40,12 +41,21 @@ const AuthProvider = ({children}) => {
         }
     }, [])
 
+
+    useEffect(()=>{
+        fetch('http://localhost:5000/chef')
+        .then(res=>res.json())
+        .then(result => setChefs(result))
+    },[])
+    
+
     const authInfo = {
         user,
         createUser,
         signIn,
         logOut,
         loading,
+        chefs,
     }
 
     return (
