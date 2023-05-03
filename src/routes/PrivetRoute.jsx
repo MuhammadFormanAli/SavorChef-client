@@ -10,6 +10,7 @@ const PrivetRoute = ({children}) => {
     if(loading){
         return <div className='w-100 h-100 bg-secondary mx-auto d-flex align-items-center justify-content-center'><Spinner animation="border" variant="light" /></div>
     }
+    
     if(user){
         return children
     }

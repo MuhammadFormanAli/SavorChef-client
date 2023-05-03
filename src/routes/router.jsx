@@ -6,6 +6,7 @@ import ErrorPage from '../components/shared/errorPage/ErrorPage';
 import LoginLayout from '../layouts/LoginLayout';
 import RegisterLayout from '../layouts/RegisterLayout';
 import ChefDetails from '../components/protectedRoutes/ChefDetails';
+import Blogs from '../components/Blogs/Blogs';
 
 
 const router = createBrowserRouter([
@@ -29,9 +30,11 @@ const router = createBrowserRouter([
         path: "/chef-details/:id",
         element: <PrivetRoute><ChefDetails></ChefDetails></PrivetRoute>,
         loader:({params})=>(fetch(`http://localhost:5000/chef/${params.id}`))
-
-
     },
+    {
+        path:"/blogs",
+        element:<Blogs></Blogs>
+    }
     
 ]);
 

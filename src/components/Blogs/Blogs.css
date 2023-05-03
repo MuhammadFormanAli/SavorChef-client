@@ -1,0 +1,42 @@
+.blog-heading-container{
+    background: linear-gradient(90deg, rgba(126, 144, 254, 0.05) 0%, rgba(152, 115, 255, 0.05) 100%);
+}
+.blog-heading{
+    background:linear-gradient(90deg, rgba(126, 144, 254, 0.05) 0%, rgba(152, 115, 255, 0.05) 100%) ;
+    text-align: center;
+    padding: 40px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+
+.qna-container {
+
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 20px;
+    border-radius: 20px;
+
+}
+.qna{
+    background-color: #1111110d;;
+    padding: 30px;
+}
+.question{
+    background-color: #6047ec1a;
+    color: #6047EC;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+.ans{
+    color: #111111;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}

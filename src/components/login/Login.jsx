@@ -5,6 +5,7 @@ import './Login.css'
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
@@ -94,9 +95,9 @@ const Login = () => {
                 <br />
                     <h1 className='text-center'>Or</h1>
                 <div className='w-100 d-flex flex-column py-3 '>
-                    <Button onClick={handleGoogleSignIn} className='mb-3' variant="outline-primary">Login with Google</Button>
+                    <Button onClick={handleGoogleSignIn} className='mb-3' variant="outline-primary"> <FaGoogle />Login with Google</Button>
                     
-                    <Button onClick={handleGitHubSignIn} variant="outline-secondary">Login with GitHub</Button>
+                    <Button onClick={handleGitHubSignIn} variant="outline-secondary">  < FaGithub/> Login with GitHub</Button>
                 </div>
 
                 <Form.Text className="text-secondary">

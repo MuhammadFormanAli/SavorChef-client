@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons'
+
 
 const ChefCard = ({chefs}) => {
 
@@ -18,9 +21,9 @@ const ChefCard = ({chefs}) => {
             {/* <Card.Img variant="top" src={idx.imgSrc} /> */}
             <Card.Img variant="top" src="/chef4.jpg" />
             <Card.Body>
-              <Card.Title>{idx.chefName}</Card.Title>
-              <Card.Text>{idx.experience} of Experience</Card.Text>
-              <Card.Text className='d-flex justify-content-between'><span>Likes:{idx.likes}</span><span>Total recipes:{idx.totalRecipes}</span></Card.Text>
+              <Card.Title className='fw-bold'>{idx.chefName}</Card.Title>
+              <Card.Text> <FontAwesomeIcon className='text-secondary pe-2' icon={faBriefcase} />Experience{idx.experience}</Card.Text>
+              <Card.Text className='d-flex justify-content-between'><h6><FontAwesomeIcon className='text-danger pe-2' icon={faHeart} />Likes:{idx.likes}</h6><span>Total recipes:{idx.totalRecipes}</span></Card.Text>
               
             </Card.Body>
             <Link to={`chef-details/${idx.chefId}`}><Button className='w-100'>View Recipes</Button></Link>
