@@ -9,7 +9,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ChefCard = ({chefs}) => {
 
-    console.log(chefs)
+    // console.log(chefs)
 
 
     const array = [1,2,3,4,5,6]
@@ -42,7 +42,7 @@ const ChefCard = ({chefs}) => {
             <Card.Body>
               <Card.Title className='fw-bold'>{idx.chefName}</Card.Title>
               <Card.Text> <FontAwesomeIcon className='text-secondary pe-2' icon={faBriefcase} />Experience :{idx.experience}</Card.Text>
-              <Card.Text className='d-flex justify-content-between'><h6><FontAwesomeIcon className='text-danger pe-2' icon={faHeart} />Likes:{idx.likes}</h6><span>Total recipes:{idx.totalRecipes}</span></Card.Text>
+              <Card.Text className='d-flex justify-content-between'><FontAwesomeIcon className='text-danger pe-2' icon={faHeart} />Likes:{idx.likes}<span>Total recipes:{idx.totalRecipes}</span></Card.Text>
               
             </Card.Body>
             <Link to={`chef-details/${idx.chefId}`}><Button className='w-100'>View Recipes</Button></Link>

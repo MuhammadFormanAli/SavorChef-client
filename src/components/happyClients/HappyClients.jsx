@@ -8,7 +8,8 @@ const HappyClients = () => {
         .then(res=>res.json())
         .then(result=>setClients(result))
     },[])
-    console.log(clients)
+    
+    // console.log(clients)
 
     return (
         <Container className='py-5'>

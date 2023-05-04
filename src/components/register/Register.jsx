@@ -6,7 +6,7 @@ import './Register.css'
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const Register = () => {
-    const{createUser}=useContext(AuthContext)
+    const{createUser,manageUse}=useContext(AuthContext)
 
     const [accepted, setAccepted] = useState(false);
     const[error,setError] = useState("")
@@ -35,12 +35,27 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+
+
+                manageUse(name,photo)
+            .then(result=>{
+                console.log('Profile Updated')
+            })
+            .catch(error=>{
+                console.log(error.message)
+            })
+
+
                 navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
                 setError(error.message)
             })
+
+            
+
+
     }
 
     const handleAccepted = event =>{

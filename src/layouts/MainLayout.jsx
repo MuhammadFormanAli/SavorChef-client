@@ -1,17 +1,16 @@
-import React, { useContext, lazy, Suspense } from "react";
+import React, { useContext } from "react";
 import NavigationBar from "../components/shared/navbar/NavigationBar";
 
 import Banner from "../components/banner/Banner";
 
 import Footer from "../components/shared/footer/Footer";
 import ChefCard from "../components/chefCard/ChefCard";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import HappyClients from "../components/happyClients/HappyClients";
 import MostLoved from "../components/mostLovedRecipe/MostLoved";
 import { AuthContext } from "../contexts/AuthProvider";
 import { Spinner } from "react-bootstrap";
 
-// const Banner = lazy(()=>import('../components/banner/Banner'))
 
 const MainLayout = () => {
     const chefs = useLoaderData();
@@ -25,17 +24,9 @@ const MainLayout = () => {
         );
     }
 
-    const param = useParams();
     return (
         <div>
             <NavigationBar></NavigationBar>
-
-            {/* 
-              By this code component will load lazy
-            <Suspense fallback={<div>Banner is loading</div>}>
-                <Banner></Banner>
-            </Suspense> */}
-
             <Banner></Banner>
             <ChefCard chefs={chefs}></ChefCard>
             <HappyClients></HappyClients>

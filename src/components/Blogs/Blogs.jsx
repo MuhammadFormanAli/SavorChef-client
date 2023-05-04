@@ -2,16 +2,32 @@ import React from "react";
 import "./Blogs.css";
 import NavigationBar from "../shared/navbar/NavigationBar";
 import Footer from "../shared/footer/Footer";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const Blogs = () => {
     return (
         <div>
             <NavigationBar></NavigationBar>
-            <Container>
+
+            <div>
+                <Pdf targetRef={ref} filename="sample.pdf">
+                    {({ toPdf }) => (
+                        
+                        <Button className="pdf-generator-btn" variant="outline-secondary" onClick={toPdf}>Print Blogs</Button>
+                    )}
+                </Pdf>
+                
+                    <Container>
+                <div className="pdf-generator" ref={ref}>
+
+                    
                 <div className="blog-heading-container">
                     <h1 className="blog-heading">Blogs</h1>
                 </div>
+
                 <div>
                     <div className="qna-container">
                         {/* first question and answer */}
@@ -131,7 +147,11 @@ const Blogs = () => {
                         </div>
                     </div>
                 </div>
+            </div>
             </Container>
+                
+            </div>
+
             <Footer></Footer>
         </div>
     );

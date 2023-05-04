@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        loader:({params})=>fetch("https://chef-recipe-hunter-server-side-amber.vercel.app/chef"),
+        loader:()=>fetch("https://chef-recipe-hunter-server-side-amber.vercel.app/chef"),
         errorElement:<ErrorPage></ErrorPage>
         
     },
