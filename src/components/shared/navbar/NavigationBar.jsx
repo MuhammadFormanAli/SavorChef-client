@@ -15,9 +15,13 @@ const NavigationBar = () => {
             <Container>
                 <Navbar.Brand>
                     {" "}
+                    <div>
                     <Link className="fs-1 text-decoration-none" to="/">
                         SavorChef
                     </Link>
+
+                    <i className="d-block">Chinese cuisine</i>
+                    </div>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

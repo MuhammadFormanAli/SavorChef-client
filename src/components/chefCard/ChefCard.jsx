@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons'
+import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 const ChefCard = ({chefs}) => {
@@ -18,8 +20,25 @@ const ChefCard = ({chefs}) => {
       {chefs.map((idx) => (
         <Col key={idx.id}>
           <Card>
-            {/* <Card.Img variant="top" src={idx.imgSrc} /> */}
-            <Card.Img variant="top" src={idx?.imgSrc} />
+
+            {/* image load with lazy load image components */}
+            <LazyLoadImage
+             alt={''}
+             effect="blur"
+             width={500}
+             src={idx.imgSrc} // use normal <img> attributes as props
+              />
+            
+            
+            {/* this is simple img 
+            * <Card.Img variant="top" src={idx.imgSrc} /> 
+            */}
+            
+            
+
+            {/* img load with react lazy load             
+             <LazyLoad width={400} threshold={0.95}><Card.Img variant="top" src={idx.imgSrc} /></LazyLoad> */}
+
             <Card.Body>
               <Card.Title className='fw-bold'>{idx.chefName}</Card.Title>
               <Card.Text> <FontAwesomeIcon className='text-secondary pe-2' icon={faBriefcase} />Experience :{idx.experience}</Card.Text>

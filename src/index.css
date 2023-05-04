@@ -86,3 +86,8 @@ background-size: cover;
   width: 300px;
   margin: auto;
 }
+
+i{
+  font-size: 12px;
+  margin: 0;
+}
