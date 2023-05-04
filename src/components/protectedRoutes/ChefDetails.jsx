@@ -14,6 +14,9 @@ import Footer from "../shared/footer/Footer";
 import { AuthContext } from "../../contexts/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Rating from "react-rating";
+import { FaHeart, FaRegStar, FaStar } from "react-icons/fa";
+import './details.css'
 
 const ChefDetails = ({ params }) => {
     const buttons = ["Button 1", "Button 2", "Button 3"];
@@ -51,15 +54,7 @@ const ChefDetails = ({ params }) => {
         <>
             <NavigationBar></NavigationBar>
             <Container>
-                <div
-                    style={{
-                        backgroundImage: `url(${url})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                    }}
-                    className="d-flex flex-column flex-md-row "
-                >
+                <div className="d-flex flex-column flex-md-row details-banner">
                     <Col
                         style={{ background: "#0002038" }}
                         className="text-center text-white"
@@ -83,7 +78,10 @@ const ChefDetails = ({ params }) => {
                     >
                         <div className=" text-white text-left rounded p-5">
                             <h2>Experience :{experience}</h2>
-                            <h2>likes:{likes}</h2>
+                            <h2>
+                                <FaHeart className="text-danger"></FaHeart>{" "}
+                                {likes}
+                            </h2>
                             <h2>Number of recipes :{totalRecipes}</h2>
                         </div>
                     </Col>
@@ -92,14 +90,14 @@ const ChefDetails = ({ params }) => {
                 <div className="my-5">
                     <h1 className="text-center">Recipes List</h1>
                     {recipes.map((recipe) => (
-                        <div key={recipe.id}>
+                        <div key={recipe?.id}>
                             <div>
                                 <div className="my-5">
                                     <CardGroup>
                                         <Card className="m">
                                             <Card.Img
                                                 variant="top"
-                                                src="https://st2.depositphotos.com/3889193/7173/i/950/depositphotos_71739083-stock-photo-healthy-vegetarian-home-made-food.jpg"
+                                                src={recipe?.recipeImg}
                                             />
                                             <Card.Body>
                                                 <Card.Title>
@@ -107,7 +105,21 @@ const ChefDetails = ({ params }) => {
                                                 </Card.Title>
 
                                                 <div>
-                                                    Rating : {recipe.rating}
+                                                    <Rating
+                                                        className="text-warning"
+                                                        readonly
+                                                        placeholderRating={
+                                                            recipe?.rating
+                                                        }
+                                                        emptySymbol={
+                                                            <FaRegStar />
+                                                        }
+                                                        placeholderSymbol={
+                                                            <FaStar />
+                                                        }
+                                                        fullSymbol={<FaStar />}
+                                                    />
+                                                    {recipe?.rating}
                                                 </div>
                                             </Card.Body>
 

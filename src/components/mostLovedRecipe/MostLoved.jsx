@@ -50,15 +50,13 @@ const MostLoved = () => {
         className="mySwiper"
       >
 
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="/22.jpg" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe1.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe2.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe3.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe4.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe5.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe6.png" alt="" /></div></SwiperSlide>
+        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe7.png" alt="" /></div></SwiperSlide>
       </Swiper>
     </Container>
   );

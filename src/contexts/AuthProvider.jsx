@@ -56,7 +56,7 @@ const AuthProvider = ({children}) => {
 
 
     useEffect(()=>{
-        fetch('http://localhost:5000/chef')
+        fetch('https://chef-recipe-hunter-server-side-amber.vercel.app/chef')
         .then(res=>res.json())
         .then(result => setChefs(result))
     },[])

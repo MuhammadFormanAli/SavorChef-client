@@ -1,0 +1,10 @@
+.follow-us-icon{
+    color:rgb(194, 173, 173);
+    font-size: 25px;
+    margin: 5px;
+}
+.follow-us-icon:hover{
+    color:rgb(252, 240, 240);
+    font-size: 25px;
+    margin: 5px;
+}
