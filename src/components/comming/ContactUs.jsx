@@ -12,7 +12,7 @@ const ContactUs = () => {
             <LazyLoad>
             <div
                 className="d-flex align-items-center justify-content-center"
-                style={{ height: "50vh", background:`url(${'https://imaginative-praline-9d7d15.netlify.app/img/banner3.jpg'})` }}
+                style={{ height: "50vh", background:`url(${'https://poetic-sable-3448b5.netlify.app/img/banner2.jpg'})` }}
             >
                 <h1 style={{backgroundColor:"#03001c8c"}} className="fw-bolder text-info p-lg-5 p-md-3 p-sm-1 rounded">
                     Contact Page is On The Way
