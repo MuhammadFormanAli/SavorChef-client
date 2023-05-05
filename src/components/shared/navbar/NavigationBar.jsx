@@ -44,12 +44,12 @@ const NavigationBar = () => {
                     <div className="text-center">
                         {user ? (
                             <Nav>
-                                <Image data-toggle="tooltip" data-placement="top" title={user?.displayName} style={{width:"40px"}} roundedCircle className="user-photo"
+                                <span><Image data-toggle="tooltip" data-placement="left" title={user?.displayName} style={{width:"40px"}} roundedCircle className="user-photo m-2"
                                     src={user?.photoURL}
-                                    alt=""></Image>
+                                    alt=""></Image></span>
                                 
                                 <Nav.Link eventKey={2} href="#memes">
-                                    <Button variant="dark" onClick={logOut}>
+                                    <Button className="m-2" variant="dark" onClick={logOut}>
                                         LogOut
                                     </Button>
                                 </Nav.Link>

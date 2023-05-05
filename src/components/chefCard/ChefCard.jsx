@@ -1,10 +1,10 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faBriefcase, faHeart } from '@fortawesome/free-solid-svg-icons'
 import LazyLoad from 'react-lazy-load';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
 const ChefCard = ({chefs}) => {
@@ -12,7 +12,7 @@ const ChefCard = ({chefs}) => {
     // console.log(chefs)
 
 
-    const array = [1,2,3,4,5,6]
+    
     return (
         <Container className='my-5'>
             <h1 className='my-5 text-center fw-bolder'>Our Chefs</h1>
@@ -22,12 +22,12 @@ const ChefCard = ({chefs}) => {
           <Card>
 
             {/* image load with lazy load image components */}
-            <LazyLoadImage
+            {/* <LazyLoadImage
              alt={''}
              effect="blur"
-             width={500}
+             width={350}
              src={idx.imgSrc} // use normal <img> attributes as props
-              />
+              /> */}
             
             
             {/* this is simple img 
@@ -36,8 +36,8 @@ const ChefCard = ({chefs}) => {
             
             
 
-            {/* img load with react lazy load             
-             <LazyLoad width={400} threshold={0.95}><Card.Img variant="top" src={idx.imgSrc} /></LazyLoad> */}
+            {/* img load with react-lazy-load              */}
+             <LazyLoad ><Card.Img variant="top" src={idx.imgSrc} /></LazyLoad>
 
             <Card.Body>
               <Card.Title className='fw-bold'>{idx.chefName}</Card.Title>
