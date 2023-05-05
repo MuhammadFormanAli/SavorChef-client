@@ -1,7 +1,6 @@
 
 // import React, { useState } from 'react';
 import { useContext, useState } from 'react';
-import './Login.css'
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
@@ -11,18 +10,14 @@ const Login = () => {
 
 
     const[error,setError] = useState("")
-
     const { signIn,googleSignIn,gitHubSignIn } = useContext(AuthContext);
 
     const navigate = useNavigate()
     const location = useLocation()
-
     const from = location.state?.from?.pathname || '/'
     
     const handleLogin = (event) => {
-      event.preventDefault();
-      
-
+      event.preventDefault();  
       const form = event.target 
       const email = form.email.value 
       const password = form.password.value 
@@ -31,7 +26,7 @@ const Login = () => {
         return
       }
 
-      console.log(email, password)
+    //   console.log(email, password)
 
       signIn(email, password)
             .then(result => {
@@ -42,15 +37,14 @@ const Login = () => {
             .catch(error => {
                 setError(error.message);
             })
-
     }
 
+   //google login function this function will handle google sign with popup
     const handleGoogleSignIn=()=>{
         setError('')
         googleSignIn()
         .then(result =>{
-            // const user = result.user
-            // console.log(user)
+            // console.log(result.user)
             navigate(from, { replace: true })
         })
         .catch(err=>{
@@ -59,6 +53,7 @@ const Login = () => {
         })
     }
 
+    // handleGitHubSignIn will handle GitHub sign in
     const handleGitHubSignIn=()=>{
         setError('')
         gitHubSignIn()

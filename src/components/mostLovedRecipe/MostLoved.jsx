@@ -15,15 +15,16 @@ import "swiper/css";
 import { Container } from 'react-bootstrap';
 
 const MostLoved = () => {
-   
 
-    return (
-        <Container>
-      <h3 className='text-center fw-bolder fs-1 my-3'>
+
+  return (
+      <div className='pb-5 pt-2 bg-secondary'>
+    <Container >
+	  <h3 className='text-center fw-bolder fs-1 my-3'>
         Most Loved Recipes
       </h3>
-      <br />
-      <Swiper
+      
+      <Swiper 
         slidesPerView={1}
         loop={true}
         spaceBetween={0}
@@ -45,20 +46,23 @@ const MostLoved = () => {
           },
         }}
 
-        modules={[Pagination,Autoplay]}
+        modules={[Pagination, Autoplay]}
         autoplay={{ delay: 5000 }}
         className="mySwiper"
       >
+		
+		<SwiperSlide className='swiper1'><span className='fs-1 text-white'>Avocado Salad</span></SwiperSlide>
+        <SwiperSlide className='swiper2'><span className='fs-1 text-white'>Chicken Stir-Fry</span></SwiperSlide>
+        <SwiperSlide className='swiper3'><span className='fs-1 text-white'>Shrimp Fried Rice</span></SwiperSlide>
+        <SwiperSlide className='swiper4'><span className='fs-1 text-white'>Wonton Soup</span></SwiperSlide>
+        <SwiperSlide className='swiper5'><span className='fs-1 text-white'>Hot and Sour Soup</span></SwiperSlide>
+        <SwiperSlide className='swiper6'><span className='fs-1 text-white'>Kung Pao Chicken</span></SwiperSlide>
+        <SwiperSlide className='swiper7'><span className='fs-1 text-white'>Scallion Pancakes</span></SwiperSlide>
+		
 
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe1.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe2.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe3.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe4.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe5.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe6.png" alt="" /></div></SwiperSlide>
-        <SwiperSlide><div className='sp1'> <img src="https://poetic-sable-3448b5.netlify.app/img/recipe7.png" alt="" /></div></SwiperSlide>
       </Swiper>
     </Container>
+	  </div>
   );
 }
     

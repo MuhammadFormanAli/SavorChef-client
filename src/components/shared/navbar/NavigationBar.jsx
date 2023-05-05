@@ -32,6 +32,12 @@ const NavigationBar = () => {
                         <ActiveLink className="nav-link" to="/blogs">
                             Blog
                         </ActiveLink>
+                        <ActiveLink className="nav-link" to="/contactUs">
+                            Contact Us
+                        </ActiveLink>
+                        <ActiveLink className="nav-link" to="/aboutUs">
+                            About Us
+                        </ActiveLink>
 
                         {!user ? (
                             <ActiveLink className="nav-link" to="/register">

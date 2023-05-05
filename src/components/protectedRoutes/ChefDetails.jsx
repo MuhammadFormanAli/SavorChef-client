@@ -18,10 +18,20 @@ import Rating from "react-rating";
 import { FaHeart, FaRegStar, FaStar } from "react-icons/fa";
 import './details.css'
 
-const ChefDetails = ({ params }) => {
-    const buttons = ["Button 1", "Button 2", "Button 3"];
 
-    const [disable, setDisable] = useState(false);
+
+
+const ChefDetails = ({ params }) => {
+
+
+
+    const selectItem = (key) => {
+        const item = document.querySelector(`button[data-key="${key}"]`);
+        notify();
+        item.setAttribute('disabled',true)
+        // console.log(key)
+    }
+
 
     const recipes = useLoaderData();
     const { chefs } = useContext(AuthContext);
@@ -29,9 +39,7 @@ const ChefDetails = ({ params }) => {
     const chef = chefs.find((x) => x.chefId == _id.id);
 
     const { chefName, imgSrc, bio, experience, likes, totalRecipes } = chef;
-    const url =
-        "https://images.unsplash.com/photo-1526383426426-c1716158d22a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80";
-    console.log(chef, recipes);
+    // console.log(chef, recipes);
 
     const notify = () =>
         toast("Added to Favorite", {
@@ -45,10 +53,7 @@ const ChefDetails = ({ params }) => {
             theme: "light",
         });
 
-    const handleAddToFavorite = () => {
-        notify();
-        setDisable(true);
-    };
+    
 
     return (
         <>
@@ -89,6 +94,11 @@ const ChefDetails = ({ params }) => {
 
                 <div className="my-5">
                     <h1 className="text-center">Recipes List</h1>
+
+
+
+
+
                     {recipes.map((recipe) => (
                         <div key={recipe?.id}>
                             <div>
@@ -124,11 +134,13 @@ const ChefDetails = ({ params }) => {
                                             </Card.Body>
 
                                             <Button
-                                                name="a"
+                                                // name="a"
                                                 key={recipe.id}
-                                                onClick={handleAddToFavorite}
+                                                onClick={() => selectItem(recipe.id)}
                                                 className="w-100"
-                                                disabled={disable}
+                                                data-key={recipe.id}
+
+                                            // disabled={disable}
                                             >
                                                 Add to Favorite
                                             </Button>
